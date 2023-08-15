@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+body * {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  justify-self: flex-start;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+#gamediv {
+  display: grid;
+  width: 50%;
+  height: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px;
+  aspect-ratio: 1;
+  background-color: white;
+}
+
+.players {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.players > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  font-size: 3vw;
+}
+
+.cell {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+button {
+  background-color: black;
+  border: 0;
+}
+
+svg {
+  color: white;
+}
+
+.endDisplay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 25vh 25vh;
+}
+
+.loadScreen {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 25vh 25vh 25vh;
+}
+
+.finishDisplay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+}
+
+/* 
+.finishTextDiv{
+
+} */
+.endDisplay > *,
+.loadScreen > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.endContinueDiv,
+.firstPlayerDiv {
+  grid-area: 2/1/3/2;
+}
+
+.endFinishDiv,
+.secondPlayerDiv {
+  grid-area: 2/2/3/3;
+}
+
+.endTextDiv,
+.loadTextDiv {
+  grid-area: 1/1/2/3;
+}
+
+.startBtnDiv {
+  grid-area: 3/1/4/3;
+}
+
+.endContinue,
+.firstPlayer,
+.secondPlayer,
+#startbtn {
+  width: 100px;
+  height: 30px;
+  border-radius: 16px;
+  align-items: center;
+  background-color: white;
+  color: #3b3b3b;
+  border: 2px solid #1a1a1a;
+  transition: all 2s linear 1s;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  text-align: center;
+}
+
+.firstPlayer:focus,
+.secondPlayer:focus {
+  outline: none;
+  color: #fff;
+  background-color: black;
+  box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  border: 2px solid white;
+  content: "";
+}
+
+.firstPlayer,
+.secondPlayer {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.endFinish {
+  width: 100px;
+  height: 30px;
+  border-radius: 16px;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  transition: all 2s linear 1s;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.endFinish:hover {
+  color: black;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  border: 2px solid black;
+}
+
+.endContinue:hover,
+#startbtn:hover {
+  color: #fff;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  border: 2px solid white;
+}
+
+@media screen and (min-width: 1000px) {
+  #gamediv {
+    max-width: 30vw;
+  }
+
+  .players > * {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+@keyframes blink-text {
+    0% {
+     opacity: 0;
+    }
+    50% {
+     opacity: 1;
+    }
+    100% {
+     opacity: 0;
+    }
+}
+
+
+
+.winning {
+  animation: blink-text 0.3s linear infinite;
+}
